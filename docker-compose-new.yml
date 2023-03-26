@@ -1,0 +1,55 @@
+version: '2'
+services:
+  mesin1:
+    container_name: progjar-mesin-1
+    image: jupyter/scipy-notebook
+    user: root
+    ports:
+      - "60001:8888"
+    environment:
+      - "DOCKER_STACKS_JUPYTER_CMD=lab"
+      - "GRANT_SUDO=yes"
+    volumes:
+      - ./work:/home/jovyan/work
+      - ./script:/script
+    command: "start-notebook.sh --NotebookApp.token='' --NotebookApp.password=''  --NotebookApp.ip='0.0.0.0' --Notebook.autoreload=True --NotebookApp.notebook_dir=/home/jovyan/work --allow-root"
+  mesin2:
+    container_name: progjar-mesin-2
+    image: jupyter/scipy-notebook
+    user: root
+    ports:
+      - "60002:8888"
+    environment:
+      - "DOCKER_STACKS_JUPYTER_CMD=lab"
+      - "GRANT_SUDO=yes"
+    volumes:
+      - ./work:/home/jovyan/work
+      - ./script:/script
+    command: "start-notebook.sh --NotebookApp.token='' --NotebookApp.password=''  --NotebookApp.ip='0.0.0.0' --Notebook.autoreload=True --NotebookApp.notebook_dir=/home/jovyan/work --allow-root"
+  mesin3:
+    container_name: progjar-mesin-3
+    image: jupyter/scipy-notebook
+    user: root
+    ports:
+      - "60003:8888"
+    environment:
+      - "DOCKER_STACKS_JUPYTER_CMD=lab"
+      - "GRANT_SUDO=yes"
+    volumes:
+      - ./work:/home/jovyan/work
+      - ./script:/script
+    command: "start-notebook.sh --NotebookApp.token='' --NotebookApp.password=''  --NotebookApp.ip='0.0.0.0' --Notebook.autoreload=True --NotebookApp.notebook_dir=/home/jovyan/work --allow-root"
+  mesin4:
+    container_name: progjar-mesin-4
+    image: jupyter/scipy-notebook
+    user: root
+    ports:
+      - "60004:8888"
+    environment:
+      - "DOCKER_STACKS_JUPYTER_CMD=lab"
+      - "GRANT_SUDO=yes"
+    volumes:
+      - ./work:/home/jovyan/work
+      - ./script:/script
+    command: "start-notebook.sh --NotebookApp.token='' --NotebookApp.password=''  --NotebookApp.ip='0.0.0.0' --Notebook.autoreload=True --NotebookApp.notebook_dir=/home/jovyan/work --allow-root"
+
